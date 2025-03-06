@@ -1,4 +1,5 @@
 import { Card, Typography, Box } from "@mui/material";
+import Image from "next/image";
 
 function CardComponent({ icon, title, value, imagePath }) {
     return (
@@ -12,7 +13,7 @@ function CardComponent({ icon, title, value, imagePath }) {
                 width: 300,
                 height: 80,
                 bgcolor: "#fff",
-                ml:5
+                ml: 5,
             }}
         >
             <Box
@@ -25,7 +26,13 @@ function CardComponent({ icon, title, value, imagePath }) {
                 }}
             >
                 {imagePath ? (
-                    <img src={imagePath} alt={title} style={{ width: "40px", height: "40px", objectFit: "contain" }} />
+                    <Image 
+                        src={imagePath} 
+                        alt={title} 
+                        width={40} 
+                        height={40} 
+                        style={{ objectFit: "contain" }} 
+                    />
                 ) : (
                     icon
                 )}
@@ -43,7 +50,3 @@ function CardComponent({ icon, title, value, imagePath }) {
 }
 
 export default CardComponent;
-
-
-
-

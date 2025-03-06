@@ -11,14 +11,14 @@ function MyApp() {
   const [sidebarOpen] = useState(true);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: '2000px', bgcolor: '#f5f8fb', color: '#000000' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '1000', bgcolor: '#f5f8fb', color: '#000000'}}>
       <Navbar />
-      <Box sx={{ display: 'flex', flexGrow: 1, marginTop: '80px' }}>
+      <Box sx={{ display: 'flex', flexGrow: 1, marginTop: '70px' }}>
         <Drawer
           variant="persistent"
           anchor="left"
           open={sidebarOpen}
-          sx={{ '& .MuiDrawer-paper': { width: '250px', top: '80px', height: 'calc(100% - 80px)', position: 'fixed' } }}
+          sx={{ '& .MuiDrawer-paper': { width: '250px', top: '64px', position: 'fixed' } }}
         >
           <Sidebar />
         </Drawer>
@@ -38,11 +38,11 @@ function MyApp() {
           <Box sx={{ mt: 30 }} />
           <hr />
           <Box sx={{ mt: 10 }} />
-          <Box sx={{ borderRadius: 2, ml: 25 }}>
-            <Grid container spacing={0}>
+          <Box sx={{ borderRadius: 2, ml: 10 }}>
+            <Grid container spacing={4}>
               <Grid item md={5} container direction="column">
                 <Grid item>
-                  <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                     TOP <span style={{ color: "#007bff" }}>3</span> PRODUCTS THIS
                   </Typography>
                   <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -77,7 +77,7 @@ function MyApp() {
                     height={200}
                   />
                 </Grid>
-                <Card sx={{ width: 400, height: 80, borderRadius: 2, boxShadow: 3, position: "relative", backgroundColor: "#62b0f0", mt: 1, ml: 2 }}>
+                <Card sx={{ width: 400, height: 70, borderRadius: 2, boxShadow: 3, position: "relative", backgroundColor: "#62b0f0", mt: 1, ml: 2 }}>
                   <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", padding: 1.5 }}>
                     <Typography variant="h6" color="#fff" sx={{ position: "absolute", top: 5, left: 5, fontSize: 14 }}>
                       3rd

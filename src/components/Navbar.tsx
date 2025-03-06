@@ -18,12 +18,12 @@ import {
   ArrowDropDown as ArrowDropDownIcon,
 } from "@mui/icons-material";
 
-const Navbar = () => {
-  const [userMenuAnchor, setUserMenuAnchor] = useState(null);
-  const [languageMenuAnchor, setLanguageMenuAnchor] = useState(null);
+const Navbar: React.FC = () => {
+  const [userMenuAnchor, setUserMenuAnchor] = useState<null | HTMLElement>(null);
+  const [languageMenuAnchor, setLanguageMenuAnchor] = useState<null | HTMLElement>(null);
   const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
-  const openUserMenu = (event) => {
+  const openUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setUserMenuAnchor(event.currentTarget);
   };
 
@@ -31,7 +31,7 @@ const Navbar = () => {
     setUserMenuAnchor(null);
   };
 
-  const openLanguageMenu = (event) => {
+  const openLanguageMenu = (event: React.MouseEvent<HTMLElement>) => {
     setLanguageMenuAnchor(event.currentTarget);
   };
 
@@ -54,7 +54,7 @@ const Navbar = () => {
         zIndex: 1100,
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", minHeight: 80 }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", minHeight: 100 }}>
         {/* Logo Section */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Image src="/logo.png" alt="MELO Logo" width={40} height={40} style={{ marginRight: 8 }} />
@@ -78,9 +78,7 @@ const Navbar = () => {
           />
         </Box>
 
-
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-
           <Button onClick={openLanguageMenu} sx={{ textTransform: "none", color: "primary.main" }}>
             {selectedLanguage}
             <ArrowDropDownIcon />
@@ -91,14 +89,13 @@ const Navbar = () => {
             <MenuItem onClick={() => closeLanguageMenu("AR")}>العربية</MenuItem>
           </Menu>
 
-
           <IconButton color="primary">
             <NotificationsIcon />
           </IconButton>
 
           <Box sx={{ display: "flex", alignItems: "center", cursor: "pointer" }} onClick={openUserMenu}>
             <Avatar sx={{ width: 36, height: 36 }}>
-              <Image src="/profile.jpg" alt="User" width={36} height={36} />
+              <Image src="/profile.png" alt="profile" width={36} height={36} />
             </Avatar>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", ml: 1 }}>
               <Typography variant="body2">Welcome back</Typography>

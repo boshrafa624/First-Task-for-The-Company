@@ -1,7 +1,13 @@
 import { Card, Typography, Box } from "@mui/material";
 import Image from "next/image";
+type CardProps = {
+    icon: React.ReactNode;  
+    title: string;          
+    value: number;         
+    imagePath: string;      
+  };
 
-function CardComponent({ icon, title, value, imagePath }) {
+const CardComponent: React.FC<CardProps> = ({ icon, title, value, imagePath }) => {
     return (
         <Card
             sx={{
@@ -10,7 +16,7 @@ function CardComponent({ icon, title, value, imagePath }) {
                 p: 2,
                 borderRadius: 5,
                 boxShadow: 2,
-                width: 300,
+                width: 280,
                 height: 80,
                 bgcolor: "#fff",
                 ml: 5,

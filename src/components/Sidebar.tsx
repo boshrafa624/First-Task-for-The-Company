@@ -11,7 +11,7 @@ const Sidebar = () => {
             anchor="left"
             
             sx={{
-                top: 80,
+                top: 40,
                 width: 250,
                 flexShrink: 0,
                 "& .MuiDrawer-paper": { width: 250, bgcolor: "#fff", p: 2 }
@@ -157,7 +157,7 @@ const Sidebar = () => {
                         color="primary"
                         startIcon={<Logout />}
                         fullWidth
-                        sx={{ borderRadius: 2, top: 120 }}
+                        sx={{ borderRadius: 2, top: 80 }}
                     >
                         Logout
                     </Button>

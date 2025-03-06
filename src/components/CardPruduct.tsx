@@ -1,7 +1,20 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
 
-function ProductCard({
+
+interface ProductCardProps {
+    rank: number; 
+    imageUrl: string; 
+    totalSales: number; 
+    totalRevenue: number; 
+    productName: string;
+    price: number;
+    productLink: string; 
+    width?: string | number;
+    height?: string | number;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
     rank,
     imageUrl,
     totalSales,
@@ -9,17 +22,15 @@ function ProductCard({
     productName,
     price,
     productLink,
-    width , 
-    height  , 
-}) {
+    width,
+    height,
+}) => {
     return (
         <Card sx={{ width, height, borderRadius: 2, boxShadow: 3, position: 'relative' }}>
             <CardContent sx={{ display: 'flex', flexDirection: 'column', height: '100%', padding: 2 }}>
-
                 <Typography variant="h6" color="primary" sx={{ position: 'absolute', top: 10, left: 10 }}>
                     {rank}st
                 </Typography>
-
 
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 60 }}>
                     <CardMedia
@@ -29,17 +40,17 @@ function ProductCard({
                         alt={productName}
                     />
                     <div>
-                        <Typography variant="body2" noWrap sx={{color:"grey"}}>
+                        <Typography variant="body2" noWrap sx={{ color: "grey" }}>
                             Total sales: {totalSales} = {totalRevenue} $
                         </Typography>
                         <Typography variant="h6" fontWeight="bold" noWrap>
                             {productName}
                         </Typography>
-                        <Typography variant="body1" sx={{color:"grey"}}
-                        >{price} $</Typography>
+                        <Typography variant="body1" sx={{ color: "grey" }}>
+                            {price} $
+                        </Typography>
                     </div>
                 </div>
-
 
                 <Button
                     href={productLink}
@@ -60,6 +71,3 @@ function ProductCard({
 }
 
 export default ProductCard;
-
-
-

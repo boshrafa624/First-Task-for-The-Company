@@ -3,7 +3,7 @@ import Image from "next/image";
 type CardProps = {
     icon: React.ReactNode;  
     title: string;          
-    value: number;         
+    value: string;         
     imagePath: string;      
   };
 

@@ -87,7 +87,7 @@ const WarehouseTable = () => {
                             <TableCell sx={{ backgroundColor: "#f5f8fb" }}><Checkbox /></TableCell>
                             {columns.map((column) => (
                                 <TableCell key={column.field} sx={{ fontWeight: "bold", backgroundColor: "#f5f8fb", color: "#2196F3" }}>
-                                    {column.headerName}  &#x21C5;
+                                    {column.headerName}&#x21C5;
                                 </TableCell>
                             ))}
                         </TableRow>
